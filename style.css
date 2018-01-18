@@ -10,3 +10,10 @@
 body{
 	background-color: rgb(77, 0, 0);
 }
+
+
+<ul>
+  <li><a href="default.asp">Home</a></li>
+  <li><a href="news.asp">Fanfictions</a></li>
+  <li><a href="contact.asp">Facts</a></li>
+</ul>
