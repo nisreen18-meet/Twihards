@@ -1,7 +1,7 @@
 .jumbotron
 {
   background: url('http://1.bp.blogspot.com/-hRJUT13Ir88/Uh94dKLxS6I/AAAAAAAAHWo/zbUrHA-17ms/s1600/Twilight-Background-Images1.jpg') no-repeat center center;
-  background-position: 0% 25%;
+  background-position: 0% 55S%;
   background-size: cover;
   background-repeat: no-repeat;
   color: white;
@@ -12,8 +12,27 @@ body{
 }
 
 
-<ul>
-  <li><a href="default.asp">Home</a></li>
-  <li><a href="Fanfictions.asp">Fanfictions</a></li>
-  <li><a href="Facts.asp">Facts</a></li>
-</ul>
+.topnav {
+    background-color: rgb(77, 0, 0);
+    overflow: hidden;
+}
+
+.topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.topnav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.topnav a.active {
+    background-color: rgb(77, 0, 0);
+    color: white;
+}
+
