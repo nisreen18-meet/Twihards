@@ -1,5 +1,8 @@
 from flask import Flask, render_template, request
+from flask.ext.heroku import Heroku
 app = Flask(__name__)
+heroku = Heroku(app)
+
 @app.route('/')
 def index():
 	return render_template('home.html')
