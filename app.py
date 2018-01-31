@@ -12,7 +12,14 @@ class Users(db.Model):
 	id = db.Column(db.Integer, primary_key=True)
 	username = db.Column(db.String(40))
 	password = db.Column(db.String(40))
+	def __init__ (self, username, password):
+		self.username = username
+		self.password = password
+
 db.create_all()
+
+
+
 
 @app.route('/')
 def index():
@@ -38,6 +45,22 @@ def login():
 		return render_template('login.html')
 
 	elif request.method=="POST":
-		return render_template('home.html')
+		psw = request.form["psw"]
+		uname = request.form["uname"]
+		user = Users.query.filter_by(username=uname).first()
+		if psw == user.password:
+			return render_template('home.html')
+		else: 
+			return render_template('login.html')
+
+@app.route("/Signup", methods=["GET","POST"])
+def Signup():
+	uname = request.form["uname"]
+	psw = request.form["psw"]
+	userobject = Users(uname, psw)
+	db.session.add(userobject)
+	db.session.commit()
+	return render_template('home.html')
+
 if __name__ == "__main__":
     app.run()	
