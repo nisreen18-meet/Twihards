@@ -49,7 +49,7 @@ def login():
 		uname = request.form["uname"]
 		user = Users.query.filter_by(username=uname).first()
 		if psw == user.password:
-			return render_template('home.html')
+			return render_template('home.html', uname = uname)
 		else: 
 			return render_template('login.html')
 
